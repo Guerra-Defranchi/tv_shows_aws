@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}    
+
+{% block body %}
+<div class="contenedor">
+  <form action="/create" method="POST" class="template form form-group card card-body">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input name="title" type="text" class="form-control">
+    <label for="network">Network</label>
+    <input name="network" type="text" class="form-control">
+    <label for="release_date">Release Date</label>
+    <input name="release_date" type="date" class="form-control">
+    <label for="description">Description</label>
+    <textarea id="" name="description" cols="30" rows="10" class="form-control"></textarea>
+    <br>
+    <button class="btn btn-block btn-primary form-control">Add</button>
+  </form>
+</div>
+{% endblock %}

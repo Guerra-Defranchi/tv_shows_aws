@@ -1,0 +1,38 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+
+<div class="container">
+  <h1>All Shows</h1>
+  <table class="tabla table table-dark table-striped table-hover table-bordered">
+    <thead class="thead-dark">
+      <tr>
+	<th>ID</th>
+	<th>Title</th>
+	<th>Network</th>
+	<th>Release Date</th>
+	<th>Desctiption</th>
+	<th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for show in shows %}
+      <tr>
+	<td>{{ show.id }}</td>
+	<td>{{ show.title }}</td>
+	<td>{{ show.network }}</td>
+	<td>{{ show.release_date }}</td>
+	<td>{{ show.description }}</td>
+	<td><a href="/{{ show.id }}">Show</a> | <a href="/edit/{{ show.id  }}"/>Edit</a> | <a href="/destroy/{{ show.id }}">Remove</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/new">Add a new show</a>
+</div>
+
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static%}
+  <link rel="stylesheet" href="{% static 'style.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body class="bg-dark">
+    <div class="showinfo card card-body template">    
+	<h1 class="card-header">TV Show {{ show.id }}</h1>
+	<h4>Title: {{ show.title }}</h4>
+	<h4>Network: {{ show.network }}</h4>
+	<h4>Release date: {{ show.release_date }}</h4>
+	<h4>Description: {{ show.description }}</h4>
+	<h4>Last update: {{ show.updated_at }}</h4>
+        <p class="card-footer"><a href="/edit-shows.html">Edit</a> <a href="">Delete</a></p>
+    </div>
+
+
+</body>
+</html>

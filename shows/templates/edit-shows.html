@@ -1,0 +1,30 @@
+{% extends 'layout.html'%}   
+
+{% block body %}
+<div class="container">
+<h1>Edit Shows</h1>
+  <form action="/update/{{ show.id }}" method="POST" class="template form form-group card card-body">
+    {% csrf_token %}
+
+    {% if messages %}
+    <ul class="messages text-danger">
+	{% for message in messages %}
+	<li {% if message.tags %} class="{{ message.tags  }}" {% endif %}>{{ message }}</li>
+	{% endfor %}
+    </ul>
+    {% endif %}
+
+    <label for="title">Title</label>
+    <input name="title" type="text" class="form-control" value="{{show.title}}">
+    <label for="network">Network</label>
+    <input name="network" type="text" class="form-control" value="{{show.network}}">
+    <label for="release_date">Release Date</label>
+    <input name="release_date" type="date" class="form-control" value="{{show.release_date}}">
+    <label for="description">Description</label>
+    <textarea id="" name="description" cols="30" rows="10" class="form-control" value="{{show.description}}"></textarea>
+    <br>
+    <button class="btn btn-block btn-primary form-control">Update</button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.template{
+    width: 500px;
+    height:600px;
+    margin: auto;
+    margin-top:100px;
+}
+
+.inlineblock{
+    display: inline-block;
+}
+
+.centre{
+    margin:auto;
+}
+
